@@ -1,6 +1,7 @@
 package entity.core;
 
 import entity.Player;
+import entity.textures.TextureManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,13 +13,14 @@ public class GamePanel extends JPanel implements Runnable{
     final int scale = 3;
     public final int tileSize = originalTileSize * scale; //48x48 tile
 
-    final int maxScreenColumn = 16;
-    final int maxScreenRow = 12;
-    final int screenWidth = tileSize * maxScreenColumn; // 768 px
-    final int screenHeight = tileSize * maxScreenRow; // 576 px
+    public final int maxScreenColumn = 16;
+    public final int maxScreenRow = 12;
+    public final int screenWidth = tileSize * maxScreenColumn; // 768 px
+    public final int screenHeight = tileSize * maxScreenRow; // 576 px
 
     final int FPS = 60;
 
+    TextureManager textureManager = new TextureManager(this);
     KeyHandler handler = new KeyHandler();
     Thread gameThread;
 
@@ -39,7 +41,7 @@ public class GamePanel extends JPanel implements Runnable{
     @Override
     public void run() {
 
-        double drawInterval = 1000000000/FPS;
+        double drawInterval = (double) 1000000000 /FPS;
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
@@ -72,7 +74,7 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(graphics);
 
         Graphics2D graphics2D = (Graphics2D) graphics;
-
+        textureManager.draw(graphics2D);
         player.draw(graphics2D);
 
         graphics2D.dispose();
