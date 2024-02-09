@@ -6,25 +6,30 @@ import entity.textures.TextureManager;
 import javax.swing.*;
 import java.awt.*;
 
-public class GamePanel extends JPanel implements Runnable{
+public class GamePanel extends JPanel implements Runnable {
 
     //Screen settings
     final int originalTileSize = 16;
     final int scale = 3;
     public final int tileSize = originalTileSize * scale; //48x48 tile
 
-    public final int maxScreenColumn = 16;
-    public final int maxScreenRow = 12;
+    public final int maxScreenColumn = 32;
+    public final int maxScreenRow = 24;
     public final int screenWidth = tileSize * maxScreenColumn; // 768 px
     public final int screenHeight = tileSize * maxScreenRow; // 576 px
 
+    //WORLD SETTINGS
+    public final int maxWorldColum = 50;
+    public final int maxWorldRow = 50;
     final int FPS = 60;
 
     TextureManager textureManager = new TextureManager(this);
     KeyHandler handler = new KeyHandler();
     Thread gameThread;
 
-    Player player = new Player(this, handler);
+    public CollisionChecker collisionChecker = new CollisionChecker(this);
+
+    public Player player = new Player(this, handler);
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -40,7 +45,6 @@ public class GamePanel extends JPanel implements Runnable{
     }
     @Override
     public void run() {
-
         double drawInterval = (double) 1000000000 /FPS;
         double delta = 0;
         long lastTime = System.nanoTime();

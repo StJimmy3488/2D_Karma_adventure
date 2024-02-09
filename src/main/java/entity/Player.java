@@ -12,18 +12,26 @@ public class Player extends Entity{
     GamePanel gamePanel;
     KeyHandler keyHandler;
 
+    public final int screenX;
+    public final int screenY;
+
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         this.gamePanel = gamePanel;
         this.keyHandler = keyHandler;
+
+        screenX = gamePanel.screenWidth/2 - (gamePanel.tileSize/2);
+        screenY = gamePanel.screenHeight/2 - (gamePanel.tileSize/2);
+
+        solidArea = new Rectangle(8, 16, 32, 32);
 
         setDefaultValues();
         getPlayerImage();
     }
 
     public void setDefaultValues () {
-        x = 100;
-        y = 100;
-        speed = 4;
+        worldX = gamePanel.tileSize * 21;
+        worldY = gamePanel.tileSize * 21;
+        speed = 12;
         direction = "down";
     }
 
@@ -42,7 +50,7 @@ public class Player extends Entity{
             right2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_right_2.png"));
             right3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_right_3.png"));
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Failed to load player image", e);
         }
     }
     public void update() {
@@ -50,16 +58,28 @@ public class Player extends Entity{
                 || keyHandler.leftPressed || keyHandler.rightPressed) {
             if (keyHandler.upPressed) {
                 direction = "up";
-                y -= speed;
+//                worldY -= speed;
             } else if (keyHandler.downPressed) {
                 direction = "down";
-                y += speed;
+//                worldY += speed;
             } else if (keyHandler.leftPressed) {
                 direction = "left";
-                x -= speed;
+//                worldX -= speed;
             } else if (keyHandler.rightPressed) {
                 direction = "right";
-                x += speed;
+//                worldX += speed;
+            }
+            // CHECK TILE COLLISION TODO create collision switch
+            collisionOn = false;
+            gamePanel.collisionChecker.checkTile(this);
+            //IF FALSE, PLAYER CAN MOVE
+            if (!collisionOn) {
+                switch (direction) {
+                    case "up" -> worldY -= speed;
+                    case "down" -> worldY += speed;
+                    case "left" -> worldX -= speed;
+                    case "right" -> worldX += speed;
+                }
             }
             spriteCounter++;
             if (spriteCounter > 12) {
@@ -77,51 +97,51 @@ public class Player extends Entity{
     public void draw(Graphics2D graphics2D) {
         BufferedImage image = null;
         switch (direction) {
-            case "up":
-                if(spriteNum == 1) {
+            case "up" -> {
+                if (spriteNum == 1) {
                     image = up1;
                 }
-                if(spriteNum == 2) {
+                if (spriteNum == 2) {
                     image = up2;
                 }
-                if(spriteNum == 3) {
+                if (spriteNum == 3) {
                     image = up3;
                 }
-                break;
-            case "down":
-                if(spriteNum == 1) {
+            }
+            case "down" -> {
+                if (spriteNum == 1) {
                     image = down1;
                 }
-                if(spriteNum == 2) {
+                if (spriteNum == 2) {
                     image = down2;
                 }
-                if(spriteNum == 3) {
+                if (spriteNum == 3) {
                     image = down3;
                 }
-                break;
-            case "left":
-                if(spriteNum == 1) {
-                image = left1;
+            }
+            case "left" -> {
+                if (spriteNum == 1) {
+                    image = left1;
                 }
-                if(spriteNum == 2) {
-                image = left2;
+                if (spriteNum == 2) {
+                    image = left2;
                 }
-                if(spriteNum == 3) {
-                image = left3;
+                if (spriteNum == 3) {
+                    image = left3;
                 }
-                break;
-            case "right":
-                if(spriteNum == 1) {
+            }
+            case "right" -> {
+                if (spriteNum == 1) {
                     image = right1;
                 }
-                if(spriteNum == 2) {
+                if (spriteNum == 2) {
                     image = right2;
                 }
-                if(spriteNum == 3) {
+                if (spriteNum == 3) {
                     image = right3;
                 }
-                break;
+            }
         }
-        graphics2D.drawImage(image, x, y, gamePanel.tileSize, gamePanel.tileSize, null );
+        graphics2D.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null );
     }
 }

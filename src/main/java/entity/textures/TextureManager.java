@@ -5,15 +5,22 @@ import entity.core.GamePanel;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class TextureManager {
    private final GamePanel gamePanel;
-   private final List<Texture> textures;
-   private final int[][] mapTextureNum;
+   public final List<Texture> textures;
+   public final int[][] mapTextureNum;
 
+   private final String TEXTURE_FOLDER_PATH = "src/main/java/res/textures";
+   private final String MAP_PATH = "/maps/map_2.txt";
+
+   List<String> solid = Arrays.asList("water", "three", "wall");
 
 
     public TextureManager(GamePanel gamePanel) {
@@ -23,14 +30,14 @@ public class TextureManager {
     }
 
     private int[][] loadMap() {
-        int[][] map = new int[gamePanel.maxScreenColumn][gamePanel.maxScreenRow];
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(
-                Objects.requireNonNull(getClass().getResourceAsStream("/maps/map_1.txt"))))) {
+        int[][] map = new int[gamePanel.maxWorldColum][gamePanel.maxWorldRow];
+        try  (InputStream inputStream = getClass().getResourceAsStream(MAP_PATH);
+              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             int row = 0;
-            while ((line = reader.readLine()) != null && row < gamePanel.maxScreenRow) {
-                String[] numbers = line.split(" ");
-                for (int col = 0; col < gamePanel.maxScreenColumn && col < numbers.length; col++) {
+            while ((line = reader.readLine()) != null && row < gamePanel.maxWorldRow) {
+                String[] numbers = line.split("\t");
+                for (int col = 0; col < gamePanel.maxWorldColum || col < numbers.length; col++) {
                     map[col][row] = Integer.parseInt(numbers[col]);
                 }
                 row++;
@@ -42,30 +49,52 @@ public class TextureManager {
     }
     private List<Texture> loadTextures() {
         List<Texture> textures = new ArrayList<>();
-        try {
-            for (int i = 1; i < 14; i++) {
-                Texture texture = new Texture();
-                texture.image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                        "textures/texture_" + i + ".png")));
-                textures.add(texture);
-            }
+        Path textureFolder = Paths.get(TEXTURE_FOLDER_PATH);
+        try (var stream = Files.walk(textureFolder)) {
+            stream.sorted()
+                    .filter(Files::isRegularFile)
+                    .filter(path -> path.toString().endsWith(".png"))
+                    .forEach(path -> {
+                        try (InputStream inputStream = Files.newInputStream(path)) {
+                            Texture texture = new Texture();
+                            String pathString = path.toString();
+                            if (solid.stream().anyMatch(pathString::contains)) {
+                                texture.collision = true;
+                            }
+                            texture.image = ImageIO.read(inputStream);
+                            textures.add(texture);
+                        } catch (IOException e) {
+                            throw new UncheckedIOException("Failed to load texture: " + path, e);
+                        }
+                    });
         } catch (IOException e) {
-            throw new RuntimeException("Failed to load textures", e);
+            throw new UncheckedIOException("Failed to traverse texture folder located at: "
+                    + textureFolder , e);
         }
+
         return textures;
     }
     public void draw(Graphics2D graphics) {
-        int x = 0;
-        int y = 0;
-        for (int row = 0; row < gamePanel.maxScreenRow; row++) {
-            for (int col = 0; col < gamePanel.maxScreenColumn; col++) {
-                int textureNum = mapTextureNum[col][row];
-                graphics.drawImage(textures.get(textureNum).image, x, y, gamePanel.tileSize, gamePanel.tileSize, null);
-                x += gamePanel.tileSize;
+        int worldColumn;
+        int worldRow;
+
+        for (worldRow = 0; worldRow < gamePanel.maxWorldRow; worldRow++) {
+            for ( worldColumn = 0; worldColumn < gamePanel.maxWorldColum; worldColumn++) {
+                int textureNum = mapTextureNum[worldColumn][worldRow];
+
+                int worldX = worldColumn * gamePanel.tileSize;
+                int worldY = worldRow * gamePanel.tileSize;
+                int screenX = worldX - gamePanel.player.worldX + gamePanel.player.screenX;
+                int screenY = worldY - gamePanel.player.worldY + gamePanel.player.screenY;
+
+                if(worldX + gamePanel.tileSize > gamePanel.player.worldX - gamePanel.player.screenX &&
+                worldX - gamePanel.tileSize < gamePanel.player.worldX + gamePanel.player.screenX &&
+                worldY + gamePanel.tileSize > gamePanel.player.worldY - gamePanel.player.screenY &&
+                worldY - gamePanel.tileSize < gamePanel.player.worldY + gamePanel.player.screenY) {
+
+                graphics.drawImage(textures.get(textureNum).image, screenX, screenY , gamePanel.tileSize, gamePanel.tileSize, null);
+                }
             }
-            x = 0;
-            y += gamePanel.tileSize;
         }
     }
-
 }

@@ -4,39 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_1.txt" afterDir="false" />
+    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Implemented map loading">
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_with_shrooms_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_with_shrooms_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/old_road-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/road_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/water_waves_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/maps/map_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_with_shrooms_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_with_shrooms_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/old_road-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/road_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/water_waves_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/maps/map_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/maps/map_1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +47,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2bxIDzuYnF00MEUcKH7DjhPkGak" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -64,7 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -113,7 +107,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707150190408</updated>
-      <workItem from="1707150191535" duration="30499000" />
+      <workItem from="1707150191535" duration="31970000" />
+      <workItem from="1707396955050" duration="33951000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -123,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707216313391</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented map loading">
+      <option name="closed" value="true" />
+      <created>1707329984269</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707329984269</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,20 +134,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Implemented map loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented map loading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="7" />
+          <line>43</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
