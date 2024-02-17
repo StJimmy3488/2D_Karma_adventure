@@ -103,8 +103,9 @@ public class Player extends Entity{
         if (index != 999) {
             String objectName = gamePanel.obj[index].name;
             if (objectName.equals("Key")) {
-                gamePanel.obj[index] = null;
+                gamePanel.playSFX(3);
                 hasKey++;
+                gamePanel.obj[index] = null;
                 System.out.println("Key: " + hasKey);
             } else if (objectName.equals("Door")) {
                 if (hasKey > 0) {
@@ -114,6 +115,7 @@ public class Player extends Entity{
                 System.out.println("Key: " + hasKey);
             }
             else if (objectName.equals("Boots")) {
+                gamePanel.playSFX(2);
                 speed += 4;
                 gamePanel.obj[index]=null;
             }

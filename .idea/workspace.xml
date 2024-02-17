@@ -4,33 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Renamed textures">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" afterDir="false" />
+    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Added objects, interaction with objects, object collision">
       <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/SFX.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Boots.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Door.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/chest-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/door-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/key-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/AssetSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/maps/map_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Chest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Chest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +31,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "IljaVitohins"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="23362390-2e9f-462c-8ee2-7868001e909e" />
+        <option name="url" value="https://github.com/StJimmy3488/2D_Karma_adventure" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -109,7 +108,7 @@
       <updated>1707150190408</updated>
       <workItem from="1707150191535" duration="31970000" />
       <workItem from="1707396955050" duration="47098000" />
-      <workItem from="1707907871619" duration="14390000" />
+      <workItem from="1707907871619" duration="17425000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -143,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707501564075</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added objects, interaction with objects, object collision">
+      <option name="closed" value="true" />
+      <created>1708194782003</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708194782003</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +161,7 @@
     <MESSAGE value="Implemented map loading" />
     <MESSAGE value="Refactored TextureManager, implemented collision" />
     <MESSAGE value="Renamed textures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed textures" />
+    <MESSAGE value="Added objects, interaction with objects, object collision" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added objects, interaction with objects, object collision" />
   </component>
 </project>

@@ -37,9 +37,9 @@ public class AssetSetter {
         gamePanel.obj[3].worldX = 7 * gamePanel.tileSize;
         gamePanel.obj[3].worldY = 35 * gamePanel.tileSize;
 
-        gamePanel.obj[3] = new OBJ_Boots();
-        gamePanel.obj[3].worldX = 47 * gamePanel.tileSize;
-        gamePanel.obj[3].worldY = 22 * gamePanel.tileSize;
+        gamePanel.obj[5] = new OBJ_Boots();
+        gamePanel.obj[5].worldX = 47 * gamePanel.tileSize;
+        gamePanel.obj[5].worldY = 22 * gamePanel.tileSize;
 
 
     }

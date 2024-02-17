@@ -26,6 +26,8 @@ public class GamePanel extends JPanel implements Runnable {
 
     TextureManager textureManager = new TextureManager(this);
     KeyHandler handler = new KeyHandler();
+    SFX sfx = new SFX();
+    SFX sound = new SFX();
     Thread gameThread;
 
     public CollisionChecker collisionChecker = new CollisionChecker(this);
@@ -44,6 +46,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void setupGame() {
         assetSetter.setObject();
+        playMusic(0);
     }
 
     public void startThread() {
@@ -96,5 +99,18 @@ public class GamePanel extends JPanel implements Runnable {
         player.draw(graphics2D);
 
         graphics2D.dispose();
+    }
+    public void playMusic(int index) {
+        sfx.setFile(index);
+        sfx.play();
+        sfx.loop();
+
+    }
+    public void stopMusic() {
+        sfx.stop();
+    }
+    public void playSFX(int index) {
+        sound.setFile(index);
+        sound.play();
     }
 }
