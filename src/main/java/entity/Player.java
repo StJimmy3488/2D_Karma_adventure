@@ -14,6 +14,7 @@ public class Player extends Entity{
 
     public final int screenX;
     public final int screenY;
+    int hasKey = 0;
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         this.gamePanel = gamePanel;
@@ -21,8 +22,9 @@ public class Player extends Entity{
 
         screenX = gamePanel.screenWidth/2 - (gamePanel.tileSize/2);
         screenY = gamePanel.screenHeight/2 - (gamePanel.tileSize/2);
-
-        solidArea = new Rectangle(8, 16, 32, 32);
+        solidArea = new Rectangle(8, 8, 24, 24);
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
 
         setDefaultValues();
         getPlayerImage();
@@ -72,6 +74,9 @@ public class Player extends Entity{
             // CHECK TILE COLLISION TODO create collision switch
             collisionOn = false;
             gamePanel.collisionChecker.checkTile(this);
+            // CHECK OBJECT COLLISION
+            int objectIndex = gamePanel.collisionChecker.checkObject(this, true);
+            pickUpObjectOf(objectIndex);
             //IF FALSE, PLAYER CAN MOVE
             if (!collisionOn) {
                 switch (direction) {
@@ -93,6 +98,27 @@ public class Player extends Entity{
                 spriteCounter = 0;
             }
         }
+    }
+    public void pickUpObjectOf(int index) {
+        if (index != 999) {
+            String objectName = gamePanel.obj[index].name;
+            if (objectName.equals("Key")) {
+                gamePanel.obj[index] = null;
+                hasKey++;
+                System.out.println("Key: " + hasKey);
+            } else if (objectName.equals("Door")) {
+                if (hasKey > 0) {
+                    gamePanel.obj[index] = null;
+                    hasKey--;
+                }
+                System.out.println("Key: " + hasKey);
+            }
+            else if (objectName.equals("Boots")) {
+                speed += 4;
+                gamePanel.obj[index]=null;
+            }
+        }
+
     }
     public void draw(Graphics2D graphics2D) {
         BufferedImage image = null;

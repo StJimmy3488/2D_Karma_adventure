@@ -4,33 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Implemented map loading">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" afterDir="false" />
+    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Renamed textures">
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/SFX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Boots.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Door.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Key.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/maps/map_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/texture_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/chest-1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/door-1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/key-1.png.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/maps/map_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/maps/map_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/maps/map_2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,8 @@
       <option name="presentableId" value="Default" />
       <updated>1707150190408</updated>
       <workItem from="1707150191535" duration="31970000" />
-      <workItem from="1707396955050" duration="33951000" />
+      <workItem from="1707396955050" duration="47098000" />
+      <workItem from="1707907871619" duration="14390000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -126,7 +127,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707329984269</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactored TextureManager, implemented collision">
+      <option name="closed" value="true" />
+      <created>1707501526503</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707501526503</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Renamed textures">
+      <option name="closed" value="true" />
+      <created>1707501564075</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707501564075</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,17 +152,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Implemented map loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented map loading" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Refactored TextureManager, implemented collision" />
+    <MESSAGE value="Renamed textures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed textures" />
   </component>
 </project>
