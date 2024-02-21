@@ -60,7 +60,7 @@ public class Player extends Entity{
     public void initializePlayer () {
         worldX = Constants.TILE_SIZE * 21;
         worldY = Constants.TILE_SIZE * 21;
-        speed = 8;
+        speed = 4;
         direction = DOWN;
     }
 

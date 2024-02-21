@@ -5,39 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Implemented: messages, final screen, global constants &#10;Refactored: Player, direction handling">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/constants/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/constants/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entity/core/UI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entity/core/constants/Constants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entity/core/constants/Direction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/SFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/SFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/player/karma_cat_down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/player/karma_cat_up.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/AssetSetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/SFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/SFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/constants/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/constants/Direction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/maps/map_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/player/karma_cat_down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/player/karma_cat_up.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +107,7 @@
       <workItem from="1707396955050" duration="47098000" />
       <workItem from="1707907871619" duration="27783000" />
       <workItem from="1708333067431" duration="232000" />
-      <workItem from="1708338804383" duration="47296000" />
+      <workItem from="1708338804383" duration="49347000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -184,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708197964027</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented: messages, final screen, global constants &#10;Refactored: Player, direction handling">
+      <option name="closed" value="true" />
+      <created>1708506420895</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708506420895</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
