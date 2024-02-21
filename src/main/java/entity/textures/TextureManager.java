@@ -1,6 +1,7 @@
 package entity.textures;
 
 import entity.core.GamePanel;
+import entity.core.constants.Constants;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -13,14 +14,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TextureManager {
-   private final GamePanel gamePanel;
-   public final List<Texture> textures;
-   public final int[][] mapTextureNum;
+    public final List<Texture> textures;
+    public final int[][] mapTextureNum;
+    private final GamePanel gamePanel;
+    private final String TEXTURE_FOLDER_PATH = "src/main/java/res/textures";
+    private final String MAP_PATH = "/maps/map_2.txt";
 
-   private final String TEXTURE_FOLDER_PATH = "src/main/java/res/textures";
-   private final String MAP_PATH = "/maps/map_2.txt";
-
-   List<String> solid = Arrays.asList("water", "three", "wall");
+    List<String> solid = Arrays.asList("water", "three", "wall");
 
 
     public TextureManager(GamePanel gamePanel) {
@@ -30,14 +30,14 @@ public class TextureManager {
     }
 
     private int[][] loadMap() {
-        int[][] map = new int[gamePanel.maxWorldColum][gamePanel.maxWorldRow];
-        try  (InputStream inputStream = getClass().getResourceAsStream(MAP_PATH);
-              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+        int[][] map = new int[Constants.MAX_WORLD_COLUMN][Constants.MAX_WORLD_ROW];
+        try (InputStream inputStream = getClass().getResourceAsStream(MAP_PATH);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             int row = 0;
-            while ((line = reader.readLine()) != null && row < gamePanel.maxWorldRow) {
+            while ((line = reader.readLine()) != null && row < Constants.MAX_WORLD_ROW) {
                 String[] numbers = line.split("\t");
-                for (int col = 0; col < gamePanel.maxWorldColum || col < numbers.length; col++) {
+                for (int col = 0; col < Constants.MAX_WORLD_COLUMN || col < numbers.length; col++) {
                     map[col][row] = Integer.parseInt(numbers[col]);
                 }
                 row++;
@@ -47,6 +47,7 @@ public class TextureManager {
         }
         return map;
     }
+
     private List<Texture> loadTextures() {
         List<Texture> textures = new ArrayList<>();
         Path textureFolder = Paths.get(TEXTURE_FOLDER_PATH);
@@ -69,30 +70,31 @@ public class TextureManager {
                     });
         } catch (IOException e) {
             throw new UncheckedIOException("Failed to traverse texture folder located at: "
-                    + textureFolder , e);
+                    + textureFolder, e);
         }
 
         return textures;
     }
+
     public void draw(Graphics2D graphics) {
         int worldColumn;
         int worldRow;
 
-        for (worldRow = 0; worldRow < gamePanel.maxWorldRow; worldRow++) {
-            for ( worldColumn = 0; worldColumn < gamePanel.maxWorldColum; worldColumn++) {
+        for (worldRow = 0; worldRow < Constants.MAX_WORLD_ROW; worldRow++) {
+            for (worldColumn = 0; worldColumn < Constants.MAX_WORLD_COLUMN; worldColumn++) {
                 int textureNum = mapTextureNum[worldColumn][worldRow];
 
-                int worldX = worldColumn * gamePanel.tileSize;
-                int worldY = worldRow * gamePanel.tileSize;
+                int worldX = worldColumn * Constants.TILE_SIZE;
+                int worldY = worldRow * Constants.TILE_SIZE;
                 int screenX = worldX - gamePanel.player.worldX + gamePanel.player.screenX;
                 int screenY = worldY - gamePanel.player.worldY + gamePanel.player.screenY;
 
-                if(worldX + gamePanel.tileSize > gamePanel.player.worldX - gamePanel.player.screenX &&
-                worldX - gamePanel.tileSize < gamePanel.player.worldX + gamePanel.player.screenX &&
-                worldY + gamePanel.tileSize > gamePanel.player.worldY - gamePanel.player.screenY &&
-                worldY - gamePanel.tileSize < gamePanel.player.worldY + gamePanel.player.screenY) {
+                if (worldX + Constants.TILE_SIZE > gamePanel.player.worldX - gamePanel.player.screenX &&
+                        worldX - Constants.TILE_SIZE < gamePanel.player.worldX + gamePanel.player.screenX &&
+                        worldY + Constants.TILE_SIZE > gamePanel.player.worldY - gamePanel.player.screenY &&
+                        worldY - Constants.TILE_SIZE < gamePanel.player.worldY + gamePanel.player.screenY) {
 
-                graphics.drawImage(textures.get(textureNum).image, screenX, screenY , gamePanel.tileSize, gamePanel.tileSize, null);
+                    graphics.drawImage(textures.get(textureNum).image, screenX, screenY, Constants.TILE_SIZE, Constants.TILE_SIZE, null);
                 }
             }
         }

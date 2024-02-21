@@ -3,8 +3,6 @@ package entity.core;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
 import java.net.URL;
 
 public class SFX {
@@ -16,6 +14,7 @@ public class SFX {
         this.soundURL[1] = getClass().getClassLoader().getResource("sounds/level-up.wav");
         this.soundURL[2] = getClass().getClassLoader().getResource("sounds/power-up.wav");
         this.soundURL[3] = getClass().getClassLoader().getResource("sounds/mario-coin.wav");
+        this.soundURL[4] = getClass().getClassLoader().getResource("sounds/door-closed.wav");
     }
     public void setFile(int index) {
         try {

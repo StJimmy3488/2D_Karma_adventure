@@ -1,76 +1,73 @@
 package entity;
 
+import entity.core.constants.Constants;
 import entity.core.GamePanel;
 import entity.core.KeyHandler;
+import entity.core.constants.Direction;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
+
+import static entity.core.constants.Direction.*;
 
 public class Player extends Entity{
     GamePanel gamePanel;
     KeyHandler keyHandler;
 
+    private BufferedImage[] sprites;
+    private int spriteIndex = 0;
+    private final int animationDelay = 16;
+    private int animationCounter = 0;
+
     public final int screenX;
     public final int screenY;
-    int hasKey = 0;
+    public int hasKey = 0;
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         this.gamePanel = gamePanel;
         this.keyHandler = keyHandler;
-
-        screenX = gamePanel.screenWidth/2 - (gamePanel.tileSize/2);
-        screenY = gamePanel.screenHeight/2 - (gamePanel.tileSize/2);
+        screenX = Constants.SCREEN_WIDTH/2 - (Constants.TILE_SIZE/2);
+        screenY = Constants.SCREEN_HEIGHT/2 - (Constants.TILE_SIZE/2);
         solidArea = new Rectangle(8, 8, 24, 24);
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
-
-        setDefaultValues();
-        getPlayerImage();
+        initializePlayer();
+        this.loadSprites();
     }
-
-    public void setDefaultValues () {
-        worldX = gamePanel.tileSize * 21;
-        worldY = gamePanel.tileSize * 21;
-        speed = 12;
-        direction = "down";
-    }
-
-    public void getPlayerImage() {
-        try {
-            up1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_up_1.png"));
-            up2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_up_3.png"));
-            up3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_up_2.png"));
-            down1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_down_1.png"));
-            down2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_down_2.png"));
-            down3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_down_3.png"));
-            left1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_left_1.png"));
-            left2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_left_2.png"));
-            left3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_left_3.png"));
-            right1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_right_1.png"));
-            right2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_right_2.png"));
-            right3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/karma_cat_right_3.png"));
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to load player image", e);
+    private void loadSprites() {
+        BufferedImage[] sprites = direction.getSprites();
+        if (sprites != null && sprites.length > 0) {
+            this.sprites = sprites;
+        } else {
+            throw new IllegalArgumentException("No sprites found for direction: " + direction);
         }
     }
+
+    private Direction getDirection() {
+        if (keyHandler.upPressed) {
+            return UP;
+        } else if (keyHandler.downPressed) {
+            return DOWN;
+        } else if (keyHandler.leftPressed) {
+            return LEFT;
+        } else if (keyHandler.rightPressed) {
+            return RIGHT;
+        } else {
+            return direction;
+        }
+    }
+
+    public void initializePlayer () {
+        worldX = Constants.TILE_SIZE * 21;
+        worldY = Constants.TILE_SIZE * 21;
+        speed = 8;
+        direction = DOWN;
+    }
+
     public void update() {
         if (keyHandler.upPressed || keyHandler.downPressed
                 || keyHandler.leftPressed || keyHandler.rightPressed) {
-            if (keyHandler.upPressed) {
-                direction = "up";
-//                worldY -= speed;
-            } else if (keyHandler.downPressed) {
-                direction = "down";
-//                worldY += speed;
-            } else if (keyHandler.leftPressed) {
-                direction = "left";
-//                worldX -= speed;
-            } else if (keyHandler.rightPressed) {
-                direction = "right";
-//                worldX += speed;
-            }
+            direction = getDirection();
             // CHECK TILE COLLISION TODO create collision switch
             collisionOn = false;
             gamePanel.collisionChecker.checkTile(this);
@@ -80,96 +77,63 @@ public class Player extends Entity{
             //IF FALSE, PLAYER CAN MOVE
             if (!collisionOn) {
                 switch (direction) {
-                    case "up" -> worldY -= speed;
-                    case "down" -> worldY += speed;
-                    case "left" -> worldX -= speed;
-                    case "right" -> worldX += speed;
+                    case UP -> worldY -= speed;
+                    case DOWN -> worldY += speed;
+                    case LEFT -> worldX -= speed;
+                    case RIGHT -> worldX += speed;
                 }
             }
-            spriteCounter++;
-            if (spriteCounter > 12) {
-                if (spriteNum == 1) {
-                    spriteNum = 3;
-                } else if (spriteNum == 2) {
-                    spriteNum = 1;
-                } else if (spriteNum == 3) {
-                    spriteNum = 2;
-                }
-                spriteCounter = 0;
-            }
+            loadSprites();
+            animate();
         }
     }
     public void pickUpObjectOf(int index) {
         if (index != 999) {
             String objectName = gamePanel.obj[index].name;
-            if (objectName.equals("Key")) {
-                gamePanel.playSFX(3);
-                hasKey++;
-                gamePanel.obj[index] = null;
-                System.out.println("Key: " + hasKey);
-            } else if (objectName.equals("Door")) {
+
+
+            switch (objectName) {
+                case "Key" -> {
+                    gamePanel.playSFX(3);
+                    hasKey++;
+                    gamePanel.obj[index] = null;
+                    gamePanel.ui.showMessage("Key!");
+                }
+                case "Door" -> {
                 if (hasKey > 0) {
                     gamePanel.obj[index] = null;
                     hasKey--;
+                } else {
+                    gamePanel.ui.showMessage("You need a key!");
                 }
-                System.out.println("Key: " + hasKey);
-            }
-            else if (objectName.equals("Boots")) {
-                gamePanel.playSFX(2);
-                speed += 4;
-                gamePanel.obj[index]=null;
+                }
+                case "Boots" -> {
+                    gamePanel.ui.showMessage("Speed Up!");
+                    gamePanel.obj[index] = null;
+                    speed += 4;
+                    gamePanel.playSFX(2);
+                }
+                case "Chest" -> {
+                    gamePanel.ui.gameFinished = true;
+                    gamePanel.stopMusic();
+                    gamePanel.playMusic(1);
+                }
             }
         }
 
     }
     public void draw(Graphics2D graphics2D) {
-        BufferedImage image = null;
-        switch (direction) {
-            case "up" -> {
-                if (spriteNum == 1) {
-                    image = up1;
-                }
-                if (spriteNum == 2) {
-                    image = up2;
-                }
-                if (spriteNum == 3) {
-                    image = up3;
-                }
-            }
-            case "down" -> {
-                if (spriteNum == 1) {
-                    image = down1;
-                }
-                if (spriteNum == 2) {
-                    image = down2;
-                }
-                if (spriteNum == 3) {
-                    image = down3;
-                }
-            }
-            case "left" -> {
-                if (spriteNum == 1) {
-                    image = left1;
-                }
-                if (spriteNum == 2) {
-                    image = left2;
-                }
-                if (spriteNum == 3) {
-                    image = left3;
-                }
-            }
-            case "right" -> {
-                if (spriteNum == 1) {
-                    image = right1;
-                }
-                if (spriteNum == 2) {
-                    image = right2;
-                }
-                if (spriteNum == 3) {
-                    image = right3;
-                }
-            }
+        BufferedImage sprite = sprites[spriteIndex];
+        graphics2D.drawImage(sprite, screenX, screenY, Constants.TILE_SIZE, Constants.TILE_SIZE, null );
+    }
+    private void animate() {
+        // Increment animation counter
+        animationCounter++;
+        if (animationCounter >= animationDelay) {
+            // Reset animation counter
+            animationCounter = 0;
+            // Move to the next sprite
+            spriteIndex = (spriteIndex + 1) % sprites.length;
         }
-        graphics2D.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null );
     }
 }

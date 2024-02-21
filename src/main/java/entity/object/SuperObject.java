@@ -1,5 +1,6 @@
 package entity.object;
 
+import entity.core.constants.Constants;
 import entity.core.GamePanel;
 
 import java.awt.*;
@@ -17,12 +18,12 @@ public class SuperObject {
         int screenX = worldX - gamePanel.player.worldX + gamePanel.player.screenX;
         int screenY = worldY - gamePanel.player.worldY + gamePanel.player.screenY;
 
-        if (((worldX + gamePanel.tileSize) > (gamePanel.player.worldX - gamePanel.player.screenX)) &&
-                ((worldX - gamePanel.tileSize) < (gamePanel.player.worldX + gamePanel.player.screenX)) &&
-                ((worldY + gamePanel.tileSize) > (gamePanel.player.worldY - gamePanel.player.screenY)) &&
-                ((worldY - gamePanel.tileSize) < (gamePanel.player.worldY + gamePanel.player.screenY))) {
+        if (((worldX + Constants.TILE_SIZE) > (gamePanel.player.worldX - gamePanel.player.screenX)) &&
+                ((worldX - Constants.TILE_SIZE) < (gamePanel.player.worldX + gamePanel.player.screenX)) &&
+                ((worldY + Constants.TILE_SIZE) > (gamePanel.player.worldY - gamePanel.player.screenY)) &&
+                ((worldY - Constants.TILE_SIZE) < (gamePanel.player.worldY + gamePanel.player.screenY))) {
 
-            graphics.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
+            graphics.drawImage(image, screenX, screenY, Constants.TILE_SIZE, Constants.TILE_SIZE, null);
         }
     }
 }
