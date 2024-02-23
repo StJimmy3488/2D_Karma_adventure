@@ -1,28 +1,30 @@
 package entity.core;
 
+import entity.core.constants.Sounds;
+import lombok.*;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+@Data
 public class KeyHandler implements KeyListener {
 
     GamePanel gamePanel;
-    public boolean upPressed, downPressed, leftPressed, rightPressed;
-    boolean offPressed = false;
+
+    private boolean upPressed, downPressed, leftPressed, rightPressed;
+    private boolean offPressed = false;
 
     public KeyHandler(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
-//        int code = e.getKeyCode();
-
-    }
+    public void keyTyped(KeyEvent e) {}
 
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
-        soundSwitch(code, offPressed);
+        handleSoundSwitch(code, offPressed);
         updateDirectionPressed(code, true);
 
     }
@@ -33,9 +35,9 @@ public class KeyHandler implements KeyListener {
         updateDirectionPressed(code, false);
 
     }
-    private void soundSwitch(int code, boolean pressed) {
+    private void handleSoundSwitch(int code, boolean pressed) {
         if (code == KeyEvent.VK_M && pressed) {
-            gamePanel.playMusic(0);
+            gamePanel.playMusic(Sounds.KARMA_CAT_INTRO);
             offPressed = false;
         }
         if (code == KeyEvent.VK_M && !pressed) {
@@ -45,14 +47,15 @@ public class KeyHandler implements KeyListener {
     }
 
     private void updateDirectionPressed(int code, boolean pressed) {
-        if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
-            upPressed = pressed;
-        } else if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
-            downPressed = pressed;
-        } else if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
-            rightPressed = pressed;
-        } else if (code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
-            leftPressed = pressed;
+        switch (code) {
+            case KeyEvent.VK_W, KeyEvent.VK_UP -> setUpPressed(pressed);
+            case KeyEvent.VK_S, KeyEvent.VK_DOWN -> setDownPressed(pressed);
+            case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> setRightPressed(pressed);
+            case KeyEvent.VK_A, KeyEvent.VK_LEFT -> setLeftPressed(pressed);
         }
+    }
+    public boolean isPlayerMoving() {
+        return isUpPressed() || isDownPressed()
+                || isLeftPressed() || isRightPressed();
     }
 }

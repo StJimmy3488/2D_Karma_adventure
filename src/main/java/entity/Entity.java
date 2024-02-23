@@ -1,9 +1,11 @@
 package entity;
 
 import entity.core.constants.Direction;
+import lombok.Data;
 
 import java.awt.*;
 
+@Data
 public class Entity {
 
     public boolean collisionOn = false;

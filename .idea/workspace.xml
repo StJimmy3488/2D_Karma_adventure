@@ -9,75 +9,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Decreased player speed">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/my2DGame_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/FileReader.java" afterDir="false" />
+    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Refactored objects">
       <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/ResourceLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/constants/Sounds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/ObjectInteractionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/my2DGame_jar/my2DGame.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/my2DGame_jar/my2DGame.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/SFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/SFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Boots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/textures/Texture.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_with_shrooms_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_with_shrooms_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/old_road_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/red_wall-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/sand_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/water_waves_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/sounds/karma-cat-intro.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/sounds/level-up.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/sounds/mario-coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/FileReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/SFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/SFX.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/constants/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/constants/Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Boots.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Chest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Chest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/constants/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Key.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/Texture.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/maps/map_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_with_shrooms_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_with_shrooms_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/old_road_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/red_wall-1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/sand_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/textures/water_waves_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/karma-cat-intro.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/level-up.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/mario-coin.wav" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +114,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/res/maps" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/entity/object" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -186,7 +156,8 @@
       <workItem from="1707396955050" duration="47098000" />
       <workItem from="1707907871619" duration="27783000" />
       <workItem from="1708333067431" duration="232000" />
-      <workItem from="1708338804383" duration="88270000" />
+      <workItem from="1708338804383" duration="99248000" />
+      <workItem from="1708705098326" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -252,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708510964252</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refactored objects">
+      <option name="closed" value="true" />
+      <created>1708693011786</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708693011786</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +257,18 @@
     <MESSAGE value="Implemented SFX" />
     <MESSAGE value="Implemented: messages, final screen, global constants &#10;Refactored: Player, direction handling" />
     <MESSAGE value="Decreased player speed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Decreased player speed" />
+    <MESSAGE value="Refactored objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored objects" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

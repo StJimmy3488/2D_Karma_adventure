@@ -18,7 +18,7 @@ public class TextureManager {
     public final int[][] mapTextureNum;
     private final GamePanel gamePanel;
     private final String TEXTURE_FOLDER_PATH = "src/main/java/res/textures";
-    private final String MAP_PATH = "/maps/map_2.txt";
+    private final String MAP_PATH = "src/main/java/res/maps/map_2.txt";
 
     List<String> solid = Arrays.asList("water", "tree", "wall");
 
@@ -31,8 +31,8 @@ public class TextureManager {
 
     private int[][] loadMap() {
         int[][] map = new int[Constants.MAX_WORLD_COLUMN][Constants.MAX_WORLD_ROW];
-        try (InputStream inputStream = getClass().getResourceAsStream(MAP_PATH);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (InputStream inputStream = new FileInputStream(MAP_PATH)) {
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
             int row = 0;
             while ((line = reader.readLine()) != null && row < Constants.MAX_WORLD_ROW) {

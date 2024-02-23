@@ -1,16 +1,21 @@
 package entity;
 
-import entity.core.constants.Constants;
 import entity.core.GamePanel;
 import entity.core.KeyHandler;
 import entity.core.constants.Direction;
+import entity.core.constants.Sounds;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import static entity.core.constants.Constants.*;
 import static entity.core.constants.Direction.*;
 
+
 public class Player extends Entity{
+    @Getter
     GamePanel gamePanel;
     KeyHandler keyHandler;
 
@@ -21,18 +26,23 @@ public class Player extends Entity{
 
     public final int screenX;
     public final int screenY;
-    public int hasKey = 0;
+
+
+    @Getter
+    @Setter
+    private int playerKeyCount = 0;
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         this.gamePanel = gamePanel;
         this.keyHandler = keyHandler;
-        screenX = Constants.SCREEN_WIDTH/2 - (Constants.TILE_SIZE/2);
-        screenY = Constants.SCREEN_HEIGHT/2 - (Constants.TILE_SIZE/2);
+        screenX = HALF_SCREEN_WIDTH - HALF_TILE_SIZE;
+        screenY = HALF_SCREEN_HEIGHT - HALF_TILE_SIZE;
         solidArea = new Rectangle(8, 8, 24, 24);
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         initializePlayer();
-        this.loadSprites();
+
+        sprites = direction.getSprites();
     }
     private void loadSprites() {
         BufferedImage[] sprites = direction.getSprites();
@@ -43,14 +53,14 @@ public class Player extends Entity{
         }
     }
 
-    private Direction getDirection() {
-        if (keyHandler.upPressed) {
+    public Direction getDirection() {
+        if (keyHandler.isUpPressed()) {
             return UP;
-        } else if (keyHandler.downPressed) {
+        } else if (keyHandler.isDownPressed()) {
             return DOWN;
-        } else if (keyHandler.leftPressed) {
+        } else if (keyHandler.isLeftPressed()) {
             return LEFT;
-        } else if (keyHandler.rightPressed) {
+        } else if (keyHandler.isRightPressed()) {
             return RIGHT;
         } else {
             return direction;
@@ -58,15 +68,14 @@ public class Player extends Entity{
     }
 
     public void initializePlayer () {
-        worldX = Constants.TILE_SIZE * 21;
-        worldY = Constants.TILE_SIZE * 21;
-        speed = 4;
+        worldX = TILE_SIZE * 21;
+        worldY = TILE_SIZE * 21;
+        speed = 12;
         direction = DOWN;
     }
 
     public void update() {
-        if (keyHandler.upPressed || keyHandler.downPressed
-                || keyHandler.leftPressed || keyHandler.rightPressed) {
+        if (keyHandler.isPlayerMoving()) {
             direction = getDirection();
             // CHECK TILE COLLISION TODO create collision switch
             collisionOn = false;
@@ -91,48 +100,52 @@ public class Player extends Entity{
         if (index != 999) {
             String objectName = gamePanel.obj[index].getName();
 
-
             switch (objectName) {
                 case "Key" -> {
-                    gamePanel.playSFX(3);
-                    hasKey++;
+                    gamePanel.playSFX(Sounds.MARIO_COIN);
+                    playerKeyCount++;
                     gamePanel.obj[index] = null;
                     gamePanel.ui.showMessage("Key!");
                 }
                 case "Door" -> {
-                if (hasKey > 0) {
-                    gamePanel.obj[index] = null;
-                    hasKey--;
-                } else {
-                    gamePanel.ui.showMessage("You need a key!");
-                }
+                    checkKey(index);
+
                 }
                 case "Boots" -> {
                     gamePanel.ui.showMessage("Speed Up!");
                     gamePanel.obj[index] = null;
-                    speed += 4;
-                    gamePanel.playSFX(2);
+                    speed+=4;
+                    gamePanel.playSFX(Sounds.MARIO_COIN);
                 }
                 case "Chest" -> {
                     gamePanel.ui.gameFinished = true;
                     gamePanel.stopMusic();
-                    gamePanel.playMusic(1);
+                    gamePanel.playMusic(Sounds.LEVEL_UP);
                 }
             }
         }
 
     }
+
+
     public void draw(Graphics2D graphics2D) {
         BufferedImage sprite = sprites[spriteIndex];
-        graphics2D.drawImage(sprite, screenX, screenY, Constants.TILE_SIZE, Constants.TILE_SIZE, null );
+        graphics2D.drawImage(sprite, screenX, screenY, TILE_SIZE, TILE_SIZE, null );
     }
+
+    private void checkKey(int index) {
+        if (playerKeyCount > 0) {
+            gamePanel.obj[index] = null;
+            playerKeyCount--;
+        } else {
+            gamePanel.ui.showMessage("You need a key!");
+        }
+    }
+
     private void animate() {
-        // Increment animation counter
         animationCounter++;
         if (animationCounter >= animationDelay) {
-            // Reset animation counter
             animationCounter = 0;
-            // Move to the next sprite
             spriteIndex = (spriteIndex + 1) % sprites.length;
         }
     }

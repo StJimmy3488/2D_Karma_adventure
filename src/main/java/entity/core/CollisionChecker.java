@@ -26,7 +26,7 @@ public class CollisionChecker {
 
         switch (entity.direction) {
             case UP:
-                entityTopRow = (entityTopWorldY - entity.speed) / Constants.TILE_SIZE;
+                entityTopRow = (entityTopWorldY - entity.getSpeed()) / Constants.TILE_SIZE;
                 tileNum1 = gamePanel.textureManager.mapTextureNum[entityLeftColumn][entityTopRow];
                 tileNum2 = gamePanel.textureManager.mapTextureNum[entityRightColumn][entityTopRow];
                 if (gamePanel.textureManager.textures.get(tileNum1).collision ||
@@ -35,7 +35,7 @@ public class CollisionChecker {
                 }
                 break;
             case DOWN:
-                entityBottomRow = (entityBottomWorldY + entity.speed) / Constants.TILE_SIZE;
+                entityBottomRow = (entityBottomWorldY + entity.getSpeed()) / Constants.TILE_SIZE;
                 tileNum1 = gamePanel.textureManager.mapTextureNum[entityLeftColumn][entityBottomRow];
                 tileNum2 = gamePanel.textureManager.mapTextureNum[entityRightColumn][entityBottomRow];
                 if (gamePanel.textureManager.textures.get(tileNum1).collision ||
@@ -44,7 +44,7 @@ public class CollisionChecker {
                 }
                 break;
             case LEFT:
-                entityLeftColumn = (entityLeftWorldX - entity.speed) / Constants.TILE_SIZE;
+                entityLeftColumn = (entityLeftWorldX - entity.getSpeed()) / Constants.TILE_SIZE;
                 tileNum1 = gamePanel.textureManager.mapTextureNum[entityLeftColumn][entityTopRow];
                 tileNum2 = gamePanel.textureManager.mapTextureNum[entityLeftColumn][entityBottomRow];
                 if (gamePanel.textureManager.textures.get(tileNum1).collision ||
@@ -53,7 +53,7 @@ public class CollisionChecker {
                 }
                 break;
             case RIGHT:
-                entityRightColumn = (entityRightWorldX + entity.speed) / Constants.TILE_SIZE;
+                entityRightColumn = (entityRightWorldX + entity.getSpeed()) / Constants.TILE_SIZE;
                 tileNum1 = gamePanel.textureManager.mapTextureNum[entityRightColumn][entityTopRow];
                 tileNum2 = gamePanel.textureManager.mapTextureNum[entityRightColumn][entityBottomRow];
                 if (gamePanel.textureManager.textures.get(tileNum1).collision ||
@@ -76,7 +76,7 @@ public class CollisionChecker {
 
                 switch (entity.direction) {
                     case UP -> {
-                        entity.solidArea.y -= entity.speed;
+                        entity.solidArea.y -= entity.getSpeed();
                         if (entity.solidArea.intersects(gamePanel.obj[i].solidArea)) {
                             if (gamePanel.obj[i].hasCollision()) {
                                 entity.collisionOn = true;
@@ -87,7 +87,7 @@ public class CollisionChecker {
                         }
                     }
                     case DOWN -> {
-                        entity.solidArea.y += entity.speed;
+                        entity.solidArea.y += entity.getSpeed();
                         if (entity.solidArea.intersects(gamePanel.obj[i].solidArea)) {
                             if (gamePanel.obj[i].hasCollision()) {
                                 System.out.println("down");
@@ -99,7 +99,7 @@ public class CollisionChecker {
                         }
                     }
                     case LEFT -> {
-                        entity.solidArea.x -= entity.speed;
+                        entity.solidArea.x -= entity.getSpeed();
                         if (entity.solidArea.intersects(gamePanel.obj[i].solidArea)) {
                             if (gamePanel.obj[i].hasCollision()) {
                                 entity.collisionOn = true;
@@ -110,7 +110,7 @@ public class CollisionChecker {
                         }
                     }
                     case RIGHT -> {
-                        entity.solidArea.x += entity.speed;
+                        entity.solidArea.x += entity.getSpeed();
                         if (entity.solidArea.intersects(gamePanel.obj[i].solidArea)) {
                             if (gamePanel.obj[i].hasCollision()) {
                                 entity.collisionOn = true;

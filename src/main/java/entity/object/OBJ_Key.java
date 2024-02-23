@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class OBJ_Key extends SuperObject{
+
     public OBJ_Key() {
         setName("Key");
         try {
@@ -13,6 +14,7 @@ public class OBJ_Key extends SuperObject{
             throw new RuntimeException(e);
         }
         setCollision(true);
+
 
     }
 }

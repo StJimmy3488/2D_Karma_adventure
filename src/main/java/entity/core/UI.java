@@ -52,7 +52,7 @@ public class UI {
         graphics2D.setColor(Color.white);
         graphics2D.drawImage(keyImage, Constants.TILE_SIZE/4,Constants.TILE_SIZE/4, Constants.TILE_SIZE, Constants.TILE_SIZE, null);
         graphics2D.drawImage(keyImage, Constants.TILE_SIZE/4,Constants.TILE_SIZE/4, Constants.TILE_SIZE, Constants.TILE_SIZE, null);
-        graphics2D.drawString("x " + gamePanel.player.hasKey, 65 , 44);
+        graphics2D.drawString("x " + gamePanel.player.getPlayerKeyCount(), 65 , 44);
 
         drawMessage(graphics2D);
 
@@ -61,7 +61,7 @@ public class UI {
     private void drawMessage(Graphics2D graphics2D) {
         if (messageOn) {
             graphics2D.setFont(messageFont);
-            graphics2D.drawString(message, Constants.TILE_SIZE/2, Constants.TILE_SIZE*5);
+            graphics2D.drawString(message, Constants.HALF_TILE_SIZE, Constants.TILE_SIZE*5);
             messageTime++;
             messageScreenTime();
         }

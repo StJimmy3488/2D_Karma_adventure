@@ -2,6 +2,7 @@ package entity.core;
 
 import entity.Player;
 import entity.core.constants.Constants;
+import entity.core.constants.Sounds;
 import entity.object.SuperObject;
 import entity.textures.TextureManager;
 
@@ -35,7 +36,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void setupGame() {
         assetSetter.setObject();
-        playMusic(0);
+        playMusic(Sounds.KARMA_CAT_INTRO);
     }
 
     public void startThread() {
@@ -91,16 +92,16 @@ public class GamePanel extends JPanel implements Runnable {
         ui.draw(graphics2D);
         graphics2D.dispose();
     }
-    public void playMusic(int index) {
-        sound.setFile(index);
+    public void playMusic(Sounds sounds) {
+        sound.setFile(sounds);
         sound.loop();
         sound.play();
     }
     public void stopMusic() {
         sound.stop();
     }
-    public void playSFX(int index) {
-        sfx.setFile(index);
+    public void playSFX(Sounds sounds) {
+        sfx.setFile(sounds);
         sfx.play();
     }
 }
