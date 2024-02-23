@@ -1,17 +1,18 @@
 package entity.object;
 
 import javax.imageio.ImageIO;
+import java.io.File;
 import java.io.IOException;
 
 public class OBJ_Chest extends SuperObject{
     public OBJ_Chest() {
-        name = "Chest";
+        setName("Chest");
         try {
-            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/chest-1.png"));
+            setImage(ImageIO.read(new File("src/main/java/res/objects/chest-1.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        collision = true;
+        setCollision(true);
 
     }
 }

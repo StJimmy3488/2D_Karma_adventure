@@ -78,7 +78,7 @@ public class CollisionChecker {
                     case UP -> {
                         entity.solidArea.y -= entity.speed;
                         if (entity.solidArea.intersects(gamePanel.obj[i].solidArea)) {
-                            if (gamePanel.obj[i].collision) {
+                            if (gamePanel.obj[i].hasCollision()) {
                                 entity.collisionOn = true;
                             }
                             if (player) {
@@ -89,7 +89,7 @@ public class CollisionChecker {
                     case DOWN -> {
                         entity.solidArea.y += entity.speed;
                         if (entity.solidArea.intersects(gamePanel.obj[i].solidArea)) {
-                            if (gamePanel.obj[i].collision) {
+                            if (gamePanel.obj[i].hasCollision()) {
                                 System.out.println("down");
                                 entity.collisionOn = true;
                             }
@@ -101,7 +101,7 @@ public class CollisionChecker {
                     case LEFT -> {
                         entity.solidArea.x -= entity.speed;
                         if (entity.solidArea.intersects(gamePanel.obj[i].solidArea)) {
-                            if (gamePanel.obj[i].collision) {
+                            if (gamePanel.obj[i].hasCollision()) {
                                 entity.collisionOn = true;
                             }
                             if (player) {
@@ -112,7 +112,7 @@ public class CollisionChecker {
                     case RIGHT -> {
                         entity.solidArea.x += entity.speed;
                         if (entity.solidArea.intersects(gamePanel.obj[i].solidArea)) {
-                            if (gamePanel.obj[i].collision) {
+                            if (gamePanel.obj[i].hasCollision()) {
                                 entity.collisionOn = true;
                             }
                             if (player) {

@@ -29,7 +29,7 @@ public class UI {
         messageFont = new Font("Consolas", Font.PLAIN, 30);
         congradsMessageFont = new Font("Courier", Font.BOLD, 40);
         OBJ_Key key = new OBJ_Key();
-        keyImage = key.image;
+        keyImage = key.getImage();
 
     }
 

@@ -14,13 +14,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TextureManager {
-    public final List<Texture> textures;
+    public final List<Textures> textures;
     public final int[][] mapTextureNum;
     private final GamePanel gamePanel;
     private final String TEXTURE_FOLDER_PATH = "src/main/java/res/textures";
     private final String MAP_PATH = "/maps/map_2.txt";
 
-    List<String> solid = Arrays.asList("water", "three", "wall");
+    List<String> solid = Arrays.asList("water", "tree", "wall");
 
 
     public TextureManager(GamePanel gamePanel) {
@@ -48,8 +48,8 @@ public class TextureManager {
         return map;
     }
 
-    private List<Texture> loadTextures() {
-        List<Texture> textures = new ArrayList<>();
+    private List<Textures> loadTextures() {
+        List<Textures> texturesList = new ArrayList<>();
         Path textureFolder = Paths.get(TEXTURE_FOLDER_PATH);
         try (var stream = Files.walk(textureFolder)) {
             stream.sorted()
@@ -57,13 +57,13 @@ public class TextureManager {
                     .filter(path -> path.toString().endsWith(".png"))
                     .forEach(path -> {
                         try (InputStream inputStream = Files.newInputStream(path)) {
-                            Texture texture = new Texture();
+                            Textures textures = new Textures();
                             String pathString = path.toString();
                             if (solid.stream().anyMatch(pathString::contains)) {
-                                texture.collision = true;
+                                textures.collision = true;
                             }
-                            texture.image = ImageIO.read(inputStream);
-                            textures.add(texture);
+                            textures.image = ImageIO.read(inputStream);
+                            texturesList.add(textures);
                         } catch (IOException e) {
                             throw new UncheckedIOException("Failed to load texture: " + path, e);
                         }
@@ -73,7 +73,7 @@ public class TextureManager {
                     + textureFolder, e);
         }
 
-        return textures;
+        return texturesList;
     }
 
     public void draw(Graphics2D graphics) {

@@ -89,7 +89,7 @@ public class Player extends Entity{
     }
     public void pickUpObjectOf(int index) {
         if (index != 999) {
-            String objectName = gamePanel.obj[index].name;
+            String objectName = gamePanel.obj[index].getName();
 
 
             switch (objectName) {

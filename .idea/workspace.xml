@@ -1,16 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="my2DGame:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Implemented: messages, final screen, global constants &#10;Refactored: Player, direction handling">
+    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Decreased player speed">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/my2DGame_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/FileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/ResourceLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Boots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/textures/Texture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/maps/map_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/dirt_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/flower_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_with_shrooms_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/grass_with_shrooms_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/old_road_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/red_wall-1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/sand_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/three_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/textures/water_waves_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/UI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/constants/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/constants/Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Boots.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Chest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Chest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Key.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/Texture.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/maps/map_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/maps/map_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/dirt_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/flower_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_with_shrooms_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/grass_with_shrooms_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/old_road_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/red_wall-1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/sand_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/three_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/water_waves_1.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +87,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,6 +110,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -55,6 +125,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JAR Application.my2DGame.jar.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -66,6 +137,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -74,7 +148,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/res/maps" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="entity.core.Main" />
       <module name="my2DGame" />
@@ -82,9 +156,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="my2DGame.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/my2DGame_jar/my2DGame.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.my2DGame.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -107,7 +186,7 @@
       <workItem from="1707396955050" duration="47098000" />
       <workItem from="1707907871619" duration="27783000" />
       <workItem from="1708333067431" duration="232000" />
-      <workItem from="1708338804383" duration="49347000" />
+      <workItem from="1708338804383" duration="88270000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -165,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708506420895</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Decreased player speed">
+      <option name="closed" value="true" />
+      <created>1708510964252</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708510964252</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +277,7 @@
     <MESSAGE value="Added objects, interaction with objects, object collision" />
     <MESSAGE value="Implemented SFX" />
     <MESSAGE value="Implemented: messages, final screen, global constants &#10;Refactored: Player, direction handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented: messages, final screen, global constants &#10;Refactored: Player, direction handling" />
+    <MESSAGE value="Decreased player speed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Decreased player speed" />
   </component>
 </project>
