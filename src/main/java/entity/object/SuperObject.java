@@ -11,7 +11,11 @@ import static entity.core.constants.Constants.*;
 @Data
 public class SuperObject {
 
-    public Rectangle objectSolidArea = new Rectangle(0, 0, TILE_SIZE, TILE_SIZE);
+    public void setObjectSolidAreaCoords(int x, int y) {
+        this.objectSolidArea = new Rectangle(x,y, TILE_SIZE, TILE_SIZE);
+    }
+
+    public Rectangle objectSolidArea;
     private BufferedImage image;
     private String name;
     private int worldX;

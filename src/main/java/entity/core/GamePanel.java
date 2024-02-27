@@ -5,6 +5,7 @@ import entity.core.constants.Constants;
 import entity.core.constants.Sounds;
 import entity.object.SuperObject;
 import entity.textures.TextureManager;
+import lombok.Getter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,8 +28,8 @@ public class GamePanel extends JPanel implements Runnable {
 
 
     public Player player = new Player(this, handler);
-
-    public List<SuperObject> obj = new ArrayList<>();
+    @Getter
+    private final List<SuperObject> objectList = new ArrayList<>();
     public GamePanel() {
         this.setPreferredSize(new Dimension(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT));
         this.setBackground(Color.darkGray);
@@ -83,7 +84,7 @@ public class GamePanel extends JPanel implements Runnable {
         // TEXTURE
         textureManager.draw(graphics2D);
         //OBJECT
-        for (SuperObject superObject : obj) {
+        for (SuperObject superObject : getObjectList()) {
             if (superObject != null) {
                 superObject.draw(graphics2D, this);
             }
@@ -107,4 +108,9 @@ public class GamePanel extends JPanel implements Runnable {
         sfx.setFile(sounds);
         sfx.play();
     }
+
+    public SuperObject getObjectWith(int index) {
+        return objectList.get(index);
+    }
+
 }

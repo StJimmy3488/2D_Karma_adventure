@@ -41,7 +41,7 @@ public class Player extends Entity{
     }
 
     public void initializePlayer () {
-        setPlayerSolidArea(new Rectangle(8, 8, 24, 24));
+        setPlayerSolidArea(new Rectangle(8, 8, HALF_TILE_SIZE, HALF_TILE_SIZE));
         worldX = PLAYER_START_POSITION_X;
         worldY = PLAYER_START_POSITION_Y;
         speed = 8;
@@ -49,8 +49,8 @@ public class Player extends Entity{
     }
 
     public void pickUpObjectOf(int index) {
-        if (index != 999 && gamePanel.obj.get(index) != null) {
-            String objectName = (gamePanel.obj.get(index).getName());
+        if (index != 999 && gamePanel.getObjectList().get(index) != null) {
+            String objectName = (gamePanel.getObjectList().get(index).getName());
             ObjectInteraction interaction = interactionFactory.getInteraction(objectName);
             if (interaction != null) {
                 interaction.interact(this, index);
@@ -88,7 +88,7 @@ public class Player extends Entity{
             collisionOn = false;
             gamePanel.collisionChecker.checkTile(this);
             // CHECK OBJECT COLLISION
-            int objectIndex = gamePanel.collisionChecker.checkObject(this, true);
+            int objectIndex = gamePanel.collisionChecker.checkObject(this);
             pickUpObjectOf(objectIndex);
             //IF FALSE, PLAYER CAN MOVE
             if (!collisionOn) {
@@ -103,37 +103,6 @@ public class Player extends Entity{
             animate();
         }
     }
-//    public void pickUpObjectOf(int index) {
-//        if (index != 999) {
-//            String objectName = gamePanel.obj[index].getName();
-//
-//            switch (objectName) {
-//                case "Key" -> {
-//                    gamePanel.playSFX(Sounds.MARIO_COIN);
-//                    playerKeyCount++;
-//                    gamePanel.obj[index] = null;
-//                    gamePanel.ui.showMessage("Key!");
-//                }
-//                case "Door" -> {
-//                    checkKey(index);
-//
-//                }
-//                case "Boots" -> {
-//                    gamePanel.ui.showMessage("Speed Up!");
-//                    gamePanel.obj[index] = null;
-//                    speed+=4;
-//                    gamePanel.playSFX(Sounds.MARIO_COIN);
-//                }
-//                case "Chest" -> {
-//                    gamePanel.ui.gameFinished = true;
-//                    gamePanel.stopMusic();
-//                    gamePanel.playMusic(Sounds.LEVEL_UP);
-//                }
-//            }
-//        }
-//
-//    }
-
 
     public void draw(Graphics2D graphics2D) {
         BufferedImage sprite = sprites[spriteIndex];
@@ -142,7 +111,7 @@ public class Player extends Entity{
 
     public void checkKey(int index) {
         if (playerKeyCount > 0) {
-            gamePanel.obj.set(index, null);
+            gamePanel.getObjectList().set(index, null);
             playerKeyCount--;
         } else {
             gamePanel.ui.showMessage("You need a key!");
@@ -165,8 +134,8 @@ public class Player extends Entity{
         speed += speedPoints;
     }
 
-    public Rectangle getPlayerSolidArea() {
-        return solidArea;
+    public void setPlayerSolidAreaCoords(int x, int y) {
+        this.solidArea = new Rectangle(x, y, HALF_TILE_SIZE, HALF_TILE_SIZE);
     }
     public void setPlayerSolidArea(Rectangle solidArea) {
         this.solidArea = solidArea;

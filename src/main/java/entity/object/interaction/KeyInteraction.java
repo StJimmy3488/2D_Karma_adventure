@@ -7,7 +7,7 @@ public class KeyInteraction implements ObjectInteraction {
     public void interact(Player player, int index) {
         player.getGamePanel().playSFX(Sounds.MARIO_COIN);
         player.incrementPlayerKeyCount();
-        player.getGamePanel().obj.set(index, null);
+        player.getGamePanel().getObjectList().set(index, null);
         player.getGamePanel().ui.showMessage("Key!");
     }
 }

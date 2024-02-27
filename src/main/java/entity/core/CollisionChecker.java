@@ -13,10 +13,10 @@ public class CollisionChecker {
 
     public void checkTile(Entity entity) {
 
-        int entityLeftWorldX = entity.worldX + entity.solidArea.x;
-        int entityRightWorldX = entity.worldX + entity.solidArea.x + entity.solidArea.width;
-        int entityTopWorldY = entity.worldY + entity.solidArea.y;
-        int entityBottomWorldY = entity.worldY + entity.solidArea.y + entity.solidArea.height;
+        int entityLeftWorldX = entity.worldX + entity.getSolidArea().x;
+        int entityRightWorldX = entity.worldX + entity.getSolidArea().x + entity.getSolidArea().width;
+        int entityTopWorldY = entity.worldY + entity.getSolidArea().y;
+        int entityBottomWorldY = entity.worldY + entity.getSolidArea().y + entity.getSolidArea().height;
 
         int entityLeftColumn = entityLeftWorldX / Constants.TILE_SIZE;
         int entityRightColumn = entityLeftWorldX / Constants.TILE_SIZE;
@@ -64,67 +64,58 @@ public class CollisionChecker {
                 break;
         }
     }
-    public int checkObject(Player player, boolean isPlayer) {
+    public int checkObject(Player player) {
         int index = 999;
 
-        for (int i = 0; i < gamePanel.obj.size(); i++) {
-            if (gamePanel.obj.get(i) != null) {
-                player.getPlayerSolidArea().x = player.worldX + player.getPlayerSolidArea().x;
-                player.solidArea.y = player.worldY + player.solidArea.y;
 
-                gamePanel.obj.get(i).objectSolidArea.x = gamePanel.obj.get(i).getWorldX() + gamePanel.obj.get(i).objectSolidArea.x;
-                gamePanel.obj.get(i).objectSolidArea.y = gamePanel.obj.get(i).getWorldY() + gamePanel.obj.get(i).objectSolidArea.y;
+        for (int i = 0; i < gamePanel.getObjectList().size(); i++) {
+            if (gamePanel.getObjectWith(i) != null) {
+                player.setPlayerSolidAreaCoords(player.worldX, player.worldY);
+                gamePanel.getObjectWith(i).setObjectSolidAreaCoords(gamePanel.getObjectWith(i).getWorldX(),
+                        gamePanel.getObjectWith(i).getWorldY());
 
-                switch (player.direction) {
+                switch (player.getDirection()) {
                     case UP -> {
                         player.solidArea.y -= player.getSpeed();
-                        if (player.solidArea.intersects(gamePanel.obj.get(i).objectSolidArea)) {
-                            if (gamePanel.obj.get(i).hasCollision()) {
+                        if (player.solidArea.intersects(gamePanel.getObjectWith(i).objectSolidArea)) {
+                            if (gamePanel.getObjectWith(i).hasCollision()) {
                                 player.collisionOn = true;
                             }
-                            if (isPlayer) {
                                 index = i;
-                            }
                         }
                     }
                     case DOWN -> {
                         player.solidArea.y += player.getSpeed();
-                        if (player.solidArea.intersects(gamePanel.obj.get(i).objectSolidArea)) {
-                            if (gamePanel.obj.get(i).hasCollision()) {
+                        if (player.solidArea.intersects(gamePanel.getObjectWith(i).objectSolidArea)) {
+                            if (gamePanel.getObjectWith(i).hasCollision()) {
                                 player.collisionOn = true;
                             }
-                            if (isPlayer) {
                                 index = i;
-                            }
                         }
                     }
                     case LEFT -> {
                         player.solidArea.x -= player.getSpeed();
-                        if (player.solidArea.intersects(gamePanel.obj.get(i).objectSolidArea)) {
-                            if (gamePanel.obj.get(i).hasCollision()) {
+                        if (player.solidArea.intersects(gamePanel.getObjectWith(i).objectSolidArea)) {
+                            if (gamePanel.getObjectWith(i).hasCollision()) {
                                 player.collisionOn = true;
                             }
-                            if (isPlayer) {
                                 index = i;
-                            }
                         }
                     }
                     case RIGHT -> {
                         player.solidArea.x += player.getSpeed();
-                        if (player.solidArea.intersects(gamePanel.obj.get(i).getObjectSolidArea())) {
-                            if (gamePanel.obj.get(i).hasCollision()) {
+                        if (player.solidArea.intersects(gamePanel.getObjectWith(i).getObjectSolidArea())) {
+                            if (gamePanel.getObjectWith(i).hasCollision()) {
                                 player.collisionOn = true;
                             }
-                            if (isPlayer) {
                                 index = i;
-                            }
                         }
                     }
                 }
                     player.solidArea.x = player.solidAreaDefaultX;
                     player.solidArea.y = player.solidAreaDefaultY;
-                    gamePanel.obj.get(i).getObjectSolidArea().x = gamePanel.obj.get(i).getSolidAreaDefaultX();
-                    gamePanel.obj.get(i).getObjectSolidArea().y = gamePanel.obj.get(i).getSolidAreaDefaultY();
+                    gamePanel.getObjectWith(i).getObjectSolidArea().x = gamePanel.getObjectWith(i).getSolidAreaDefaultX();
+                    gamePanel.getObjectWith(i).getObjectSolidArea().y = gamePanel.getObjectWith(i).getSolidAreaDefaultY();
 
             }
 
