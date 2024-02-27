@@ -13,13 +13,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static entity.core.constants.Constants.*;
+
 public class TextureManager {
     public final List<Textures> textures;
     public final int[][] mapTextureNum;
     private final GamePanel gamePanel;
-    private final String TEXTURE_FOLDER_PATH = "src/main/java/res/textures";
-    private final String MAP_PATH = "src/main/java/res/maps/map_2.txt";
-
     List<String> solid = Arrays.asList("water", "tree", "wall");
 
 
@@ -86,13 +85,13 @@ public class TextureManager {
 
                 int worldX = worldColumn * Constants.TILE_SIZE;
                 int worldY = worldRow * Constants.TILE_SIZE;
-                int screenX = worldX - gamePanel.player.worldX + gamePanel.player.screenX;
-                int screenY = worldY - gamePanel.player.worldY + gamePanel.player.screenY;
+                int screenX = worldX - gamePanel.player.worldX + PLAYER_CAMERA_POSITION_X;
+                int screenY = worldY - gamePanel.player.worldY + PLAYER_CAMERA_POSITION_Y;
 
-                if (worldX + Constants.TILE_SIZE > gamePanel.player.worldX - gamePanel.player.screenX &&
-                        worldX - Constants.TILE_SIZE < gamePanel.player.worldX + gamePanel.player.screenX &&
-                        worldY + Constants.TILE_SIZE > gamePanel.player.worldY - gamePanel.player.screenY &&
-                        worldY - Constants.TILE_SIZE < gamePanel.player.worldY + gamePanel.player.screenY) {
+                if (worldX + Constants.TILE_SIZE > gamePanel.player.worldX - PLAYER_CAMERA_POSITION_X &&
+                        worldX - Constants.TILE_SIZE < gamePanel.player.worldX + PLAYER_CAMERA_POSITION_X &&
+                        worldY + Constants.TILE_SIZE > gamePanel.player.worldY - PLAYER_CAMERA_POSITION_Y &&
+                        worldY - Constants.TILE_SIZE < gamePanel.player.worldY + PLAYER_CAMERA_POSITION_Y) {
 
                     graphics.drawImage(textures.get(textureNum).image, screenX, screenY, Constants.TILE_SIZE, Constants.TILE_SIZE, null);
                 }

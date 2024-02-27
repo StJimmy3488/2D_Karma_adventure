@@ -8,7 +8,7 @@ public class OBJ_Boots extends SuperObject {
     public OBJ_Boots() {
         setName("Boots");
         try {
-            setImage(ImageIO.read(new File("src/main/java/res/objects/boots-1.png")));
+            setImage(ImageIO.read(new File("src/main/java/res/objects/boots.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

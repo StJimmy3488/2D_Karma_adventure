@@ -8,6 +8,8 @@ import entity.textures.TextureManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -23,9 +25,10 @@ public class GamePanel extends JPanel implements Runnable {
 
     public AssetSetter assetSetter = new AssetSetter(this);
 
-    public Player player = new Player(this, handler);
-    public SuperObject[] obj = new SuperObject[10]; //todo replace with list
 
+    public Player player = new Player(this, handler);
+
+    public List<SuperObject> obj = new ArrayList<>();
     public GamePanel() {
         this.setPreferredSize(new Dimension(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT));
         this.setBackground(Color.darkGray);

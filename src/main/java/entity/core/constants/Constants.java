@@ -17,4 +17,19 @@ public interface Constants {
     int HALF_SCREEN_HEIGHT = SCREEN_HEIGHT/2;
     int MAX_WORLD_COLUMN = 50;
     int MAX_WORLD_ROW = 50;
+
+    // Player settings
+    int PLAYER_ANIMATION_DELAY = 16;
+    int PLAYER_START_POSITION_X = TILE_SIZE * 21;
+    int PLAYER_START_POSITION_Y = TILE_SIZE * 21;
+    int PLAYER_CAMERA_POSITION_X = HALF_SCREEN_WIDTH - HALF_TILE_SIZE;
+    int PLAYER_CAMERA_POSITION_Y = HALF_SCREEN_HEIGHT - HALF_TILE_SIZE;
+
+    // Paths
+    String TEXTURE_FOLDER_PATH = "src/main/java/res/textures";
+    String MAP_PATH = "src/main/java/res/maps/map_2.txt";
+
+
+
+
 }

@@ -3,7 +3,8 @@ package entity;
 import entity.core.GamePanel;
 import entity.core.KeyHandler;
 import entity.core.constants.Direction;
-import entity.core.constants.Sounds;
+import entity.object.interaction.ObjectInteraction;
+import entity.object.interaction.ObjectInteractionFactory;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,28 +22,40 @@ public class Player extends Entity{
 
     private BufferedImage[] sprites;
     private int spriteIndex = 0;
-    private final int animationDelay = 16;
     private int animationCounter = 0;
-
-    public final int screenX;
-    public final int screenY;
 
 
     @Getter
     @Setter
     private int playerKeyCount = 0;
+    private final ObjectInteractionFactory interactionFactory = new ObjectInteractionFactory();
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         this.gamePanel = gamePanel;
         this.keyHandler = keyHandler;
-        screenX = HALF_SCREEN_WIDTH - HALF_TILE_SIZE;
-        screenY = HALF_SCREEN_HEIGHT - HALF_TILE_SIZE;
-        solidArea = new Rectangle(8, 8, 24, 24);
-        solidAreaDefaultX = solidArea.x;
-        solidAreaDefaultY = solidArea.y;
         initializePlayer();
+        solidAreaDefaultX = getSolidArea().x;
+        solidAreaDefaultY = getSolidArea().y;
 
         sprites = direction.getSprites();
+    }
+
+    public void initializePlayer () {
+        setPlayerSolidArea(new Rectangle(8, 8, 24, 24));
+        worldX = PLAYER_START_POSITION_X;
+        worldY = PLAYER_START_POSITION_Y;
+        speed = 8;
+        direction = DOWN;
+    }
+
+    public void pickUpObjectOf(int index) {
+        if (index != 999 && gamePanel.obj.get(index) != null) {
+            String objectName = (gamePanel.obj.get(index).getName());
+            ObjectInteraction interaction = interactionFactory.getInteraction(objectName);
+            if (interaction != null) {
+                interaction.interact(this, index);
+            }
+        }
     }
     private void loadSprites() {
         BufferedImage[] sprites = direction.getSprites();
@@ -67,12 +80,6 @@ public class Player extends Entity{
         }
     }
 
-    public void initializePlayer () {
-        worldX = TILE_SIZE * 21;
-        worldY = TILE_SIZE * 21;
-        speed = 12;
-        direction = DOWN;
-    }
 
     public void update() {
         if (keyHandler.isPlayerMoving()) {
@@ -96,46 +103,46 @@ public class Player extends Entity{
             animate();
         }
     }
-    public void pickUpObjectOf(int index) {
-        if (index != 999) {
-            String objectName = gamePanel.obj[index].getName();
-
-            switch (objectName) {
-                case "Key" -> {
-                    gamePanel.playSFX(Sounds.MARIO_COIN);
-                    playerKeyCount++;
-                    gamePanel.obj[index] = null;
-                    gamePanel.ui.showMessage("Key!");
-                }
-                case "Door" -> {
-                    checkKey(index);
-
-                }
-                case "Boots" -> {
-                    gamePanel.ui.showMessage("Speed Up!");
-                    gamePanel.obj[index] = null;
-                    speed+=4;
-                    gamePanel.playSFX(Sounds.MARIO_COIN);
-                }
-                case "Chest" -> {
-                    gamePanel.ui.gameFinished = true;
-                    gamePanel.stopMusic();
-                    gamePanel.playMusic(Sounds.LEVEL_UP);
-                }
-            }
-        }
-
-    }
+//    public void pickUpObjectOf(int index) {
+//        if (index != 999) {
+//            String objectName = gamePanel.obj[index].getName();
+//
+//            switch (objectName) {
+//                case "Key" -> {
+//                    gamePanel.playSFX(Sounds.MARIO_COIN);
+//                    playerKeyCount++;
+//                    gamePanel.obj[index] = null;
+//                    gamePanel.ui.showMessage("Key!");
+//                }
+//                case "Door" -> {
+//                    checkKey(index);
+//
+//                }
+//                case "Boots" -> {
+//                    gamePanel.ui.showMessage("Speed Up!");
+//                    gamePanel.obj[index] = null;
+//                    speed+=4;
+//                    gamePanel.playSFX(Sounds.MARIO_COIN);
+//                }
+//                case "Chest" -> {
+//                    gamePanel.ui.gameFinished = true;
+//                    gamePanel.stopMusic();
+//                    gamePanel.playMusic(Sounds.LEVEL_UP);
+//                }
+//            }
+//        }
+//
+//    }
 
 
     public void draw(Graphics2D graphics2D) {
         BufferedImage sprite = sprites[spriteIndex];
-        graphics2D.drawImage(sprite, screenX, screenY, TILE_SIZE, TILE_SIZE, null );
+        graphics2D.drawImage(sprite, PLAYER_CAMERA_POSITION_X, PLAYER_CAMERA_POSITION_Y, TILE_SIZE, TILE_SIZE, null );
     }
 
-    private void checkKey(int index) {
+    public void checkKey(int index) {
         if (playerKeyCount > 0) {
-            gamePanel.obj[index] = null;
+            gamePanel.obj.set(index, null);
             playerKeyCount--;
         } else {
             gamePanel.ui.showMessage("You need a key!");
@@ -144,9 +151,24 @@ public class Player extends Entity{
 
     private void animate() {
         animationCounter++;
-        if (animationCounter >= animationDelay) {
+        if (animationCounter >= PLAYER_ANIMATION_DELAY) {
             animationCounter = 0;
             spriteIndex = (spriteIndex + 1) % sprites.length;
         }
+    }
+
+    public void incrementPlayerKeyCount() {
+        playerKeyCount++;
+    }
+
+    public void incrementSpeed(int speedPoints) {
+        speed += speedPoints;
+    }
+
+    public Rectangle getPlayerSolidArea() {
+        return solidArea;
+    }
+    public void setPlayerSolidArea(Rectangle solidArea) {
+        this.solidArea = solidArea;
     }
 }

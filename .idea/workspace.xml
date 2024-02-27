@@ -9,42 +9,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Refactored objects">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/ResourceLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/core/constants/Sounds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/ObjectInteractionHandler.java" afterDir="false" />
+    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Implemented ObjectInteractionFactory, refactored object creation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/interaction/BootsInteraction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/interaction/ChestInteraction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/interaction/DoorInteraction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/interaction/KeyInteraction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/object/interaction/ObjectInteractionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/res/objects/boots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/res/objects/chest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/res/objects/door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/res/objects/key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/entity/object/interaction/BootsInteraction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/entity/object/interaction/ChestInteraction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/entity/object/interaction/DoorInteraction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/entity/object/interaction/KeyInteraction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/entity/object/interaction/ObjectInteraction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/entity/object/interaction/ObjectInteractionFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/objects/boots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/objects/chest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/objects/door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/objects/key.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/my2DGame_jar/my2DGame.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/my2DGame_jar/my2DGame.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/SFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/SFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Boots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Chest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Door.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/OBJ_Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/interaction/ObjectInteractionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/interaction/ObjectInteraction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/sounds/karma-cat-intro.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/sounds/level-up.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/res/sounds/mario-coin.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/boots-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/chest-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/door-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/res/objects/key-1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/AssetSetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/FileReader.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/KeyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/SFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/SFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/UI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/constants/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Boots.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Chest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Chest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Door.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/OBJ_Key.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/textures/TextureManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sounds/karma-cat-intro.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sounds/level-up.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sounds/mario-coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/boots-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/chest-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/door-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/objects/key-1.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +72,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -157,7 +175,7 @@
       <workItem from="1707907871619" duration="27783000" />
       <workItem from="1708333067431" duration="232000" />
       <workItem from="1708338804383" duration="99248000" />
-      <workItem from="1708705098326" duration="351000" />
+      <workItem from="1708705098326" duration="33870000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -231,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708693011786</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactored player and object logic">
+      <option name="closed" value="true" />
+      <created>1708705785603</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708705785603</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,15 +284,27 @@
     <MESSAGE value="Implemented: messages, final screen, global constants &#10;Refactored: Player, direction handling" />
     <MESSAGE value="Decreased player speed" />
     <MESSAGE value="Refactored objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored objects" />
+    <MESSAGE value="Refactored player and object logic" />
+    <MESSAGE value="Implemented ObjectInteractionFactory, refactored object creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented ObjectInteractionFactory, refactored object creation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/entity/textures/TextureManager.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/src/main/java/entity/Player.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/entity/object/interaction/ObjectInteractionFactory.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/entity/Player.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
