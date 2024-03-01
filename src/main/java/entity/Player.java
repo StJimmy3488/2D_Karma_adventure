@@ -41,10 +41,10 @@ public class Player extends Entity{
     }
 
     public void initializePlayer () {
-        setPlayerSolidArea(new Rectangle(8, 8, HALF_TILE_SIZE, HALF_TILE_SIZE));
+        setPlayerSolidArea(new Rectangle(8, 16, 32, 32));
         worldX = PLAYER_START_POSITION_X;
         worldY = PLAYER_START_POSITION_Y;
-        speed = 8;
+        speed = 12;
         direction = DOWN;
     }
 

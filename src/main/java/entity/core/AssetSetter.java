@@ -37,5 +37,11 @@ public class AssetSetter {
         gamePanel.getObjectList().add(7, new OBJ_Key());
         gamePanel.getObjectWith(7).setWorldCoords(44, 16);
 
+        gamePanel.getObjectList().add(8, new OBJ_Key());
+        gamePanel.getObjectWith(8).setWorldCoords(22, 22);
+
+        gamePanel.getObjectList().add(9, new OBJ_Key());
+        gamePanel.getObjectWith(9).setWorldCoords(23, 22);
+
     }
 }

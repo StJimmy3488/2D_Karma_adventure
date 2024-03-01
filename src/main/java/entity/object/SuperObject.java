@@ -1,18 +1,20 @@
 package entity.object;
 
 import entity.core.GamePanel;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 import static entity.core.constants.Constants.*;
 
-@Data
+@Getter
+@Setter
 public class SuperObject {
 
     public void setObjectSolidAreaCoords(int x, int y) {
-        this.objectSolidArea = new Rectangle(x,y, TILE_SIZE, TILE_SIZE);
+        this.objectSolidArea = new Rectangle(x, y, TILE_SIZE, TILE_SIZE);
     }
 
     public Rectangle objectSolidArea;
