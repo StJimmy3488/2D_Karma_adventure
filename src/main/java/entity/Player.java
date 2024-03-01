@@ -49,7 +49,7 @@ public class Player extends Entity{
     }
 
     public void pickUpObjectOf(int index) {
-        if (index != 999 && gamePanel.getObjectList().get(index) != null) {
+        if (index != Short.MAX_VALUE && gamePanel.getObjectList().get(index) != null) {
             String objectName = (gamePanel.getObjectList().get(index).getName());
             ObjectInteraction interaction = interactionFactory.getInteraction(objectName);
             if (interaction != null) {
@@ -84,21 +84,12 @@ public class Player extends Entity{
     public void update() {
         if (keyHandler.isPlayerMoving()) {
             direction = getDirection();
-            // CHECK TILE COLLISION TODO create collision switch
+            // CHECK TILE COLLISION
             collisionOn = false;
             gamePanel.collisionChecker.checkTile(this);
             // CHECK OBJECT COLLISION
             int objectIndex = gamePanel.collisionChecker.checkObject(this);
             pickUpObjectOf(objectIndex);
-            //IF FALSE, PLAYER CAN MOVE
-            if (!collisionOn) {
-                switch (direction) {
-                    case UP -> worldY -= speed;
-                    case DOWN -> worldY += speed;
-                    case LEFT -> worldX -= speed;
-                    case RIGHT -> worldX += speed;
-                }
-            }
             loadSprites();
             animate();
         }

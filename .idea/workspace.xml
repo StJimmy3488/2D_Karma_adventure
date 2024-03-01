@@ -9,15 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Refactored object solid are calculations">
+    <list default="true" id="1e63ffce-7e18-4acb-9b9b-cdd1ccef899a" name="Changes" comment="Refactored collision calculations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/AssetSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/object/SuperObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/core/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/core/ResourceLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Player$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/AssetSetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/core/CollisionChecker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/object/SuperObject.class" afterDir="false" />
     </list>
@@ -71,6 +70,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/Ilja.Vitohins/IdeaProjects/my2DGame/src/main/java/res/maps",
@@ -222,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709044659491</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Refactored collision calculations">
+      <option name="closed" value="true" />
+      <created>1709305620480</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709305620480</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +259,8 @@
     <MESSAGE value="Refactored objects" />
     <MESSAGE value="Refactored player and object logic" />
     <MESSAGE value="Implemented ObjectInteractionFactory, refactored object creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented ObjectInteractionFactory, refactored object creation" />
+    <MESSAGE value="Refactored collision calculations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored collision calculations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -260,11 +269,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/entity/object/interaction/ObjectInteractionFactory.java</url>
           <line>19</line>
           <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/entity/core/CollisionChecker.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

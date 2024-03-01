@@ -29,47 +29,55 @@ public class CollisionChecker {
         int tileNum1, tileNum2;
 
         switch (entity.getDirection()) {
-            case UP:
+            case UP -> {
                 entityTopRow = (entityTopWorldY - entity.getSpeed()) / Constants.TILE_SIZE;
                 tileNum1 = gamePanel.textureManager.mapTextureNum[entityLeftColumn][entityTopRow];
                 tileNum2 = gamePanel.textureManager.mapTextureNum[entityRightColumn][entityTopRow];
                 if (gamePanel.textureManager.textures.get(tileNum1).collision ||
                         gamePanel.textureManager.textures.get(tileNum2).collision) {
                     entity.collisionOn = true;
+                } else {
+                    entity.worldY -= entity.speed;
                 }
-                break;
-            case DOWN:
+            }
+            case DOWN -> {
                 entityBottomRow = (entityBottomWorldY + entity.getSpeed()) / Constants.TILE_SIZE;
                 tileNum1 = gamePanel.textureManager.mapTextureNum[entityLeftColumn][entityBottomRow];
                 tileNum2 = gamePanel.textureManager.mapTextureNum[entityRightColumn][entityBottomRow];
                 if (gamePanel.textureManager.textures.get(tileNum1).collision ||
                         gamePanel.textureManager.textures.get(tileNum2).collision) {
                     entity.collisionOn = true;
+                } else {
+                    entity.worldY += entity.speed;
                 }
-                break;
-            case LEFT:
+            }
+            case LEFT -> {
                 entityLeftColumn = (entityLeftWorldX - entity.getSpeed()) / Constants.TILE_SIZE;
                 tileNum1 = gamePanel.textureManager.mapTextureNum[entityLeftColumn][entityTopRow];
                 tileNum2 = gamePanel.textureManager.mapTextureNum[entityLeftColumn][entityBottomRow];
                 if (gamePanel.textureManager.textures.get(tileNum1).collision ||
                         gamePanel.textureManager.textures.get(tileNum2).collision) {
                     entity.collisionOn = true;
+                } else {
+                    entity.worldX -= entity.speed;
                 }
-                break;
-            case RIGHT:
+            }
+            case RIGHT -> {
                 entityRightColumn = (entityRightWorldX + entity.getSpeed()) / Constants.TILE_SIZE;
                 tileNum1 = gamePanel.textureManager.mapTextureNum[entityRightColumn][entityTopRow];
                 tileNum2 = gamePanel.textureManager.mapTextureNum[entityRightColumn][entityBottomRow];
                 if (gamePanel.textureManager.textures.get(tileNum1).collision ||
                         gamePanel.textureManager.textures.get(tileNum2).collision) {
                     entity.collisionOn = true;
+                } else {
+                    entity.worldX += entity.speed;
                 }
-                break;
+            }
         }
     }
 
     public int checkObject(Player player) {
-        int index = 999;
+        int index = Short.MAX_VALUE;
 
 
         for (int i = 0; i < gamePanel.getObjectList().size(); i++) {

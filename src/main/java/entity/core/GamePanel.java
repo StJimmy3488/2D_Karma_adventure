@@ -14,7 +14,6 @@ import java.util.List;
 
 public class GamePanel extends JPanel implements Runnable {
 
-    final int FPS = 60;
     TextureManager textureManager = new TextureManager(this);
     KeyHandler handler = new KeyHandler(this);
     public UI ui = new UI(this);
@@ -49,31 +48,40 @@ public class GamePanel extends JPanel implements Runnable {
     }
     @Override
     public void run() {
-        double drawInterval = (double) 1000000000 /FPS;
-        double delta = 0;
-        long lastTime = System.nanoTime();
-        long currentTime;
-        long timer = 0;
-        long drawCount = 0;
+        final double TARGET_FPS = 60.0;
+        final double TARGET_TIME_PER_FRAME = 1000000000 / TARGET_FPS;
 
-        while(gameThread != null) {
-            currentTime = System.nanoTime();
-            delta += (currentTime - lastTime) / drawInterval;
-            timer += (currentTime - lastTime);
-            lastTime = currentTime;
-            if (delta >= 1) {
+        long lastTime = System.nanoTime();
+        double unprocessedTime = 0;
+
+        while (gameThread != null) {
+            long startTime = System.nanoTime();
+            long elapsedTime = startTime - lastTime;
+            lastTime = startTime;
+            unprocessedTime += elapsedTime;
+
+            while (unprocessedTime >= TARGET_TIME_PER_FRAME) {
                 update();
-                repaint();
-                delta--;
-                drawCount++;
+                unprocessedTime -= TARGET_TIME_PER_FRAME;
             }
-            if (timer >= 1000000000) {
-                System.out.println("FPS" + drawCount);
-                drawCount = 0;
-                timer = 0;
+
+            repaint();
+
+            long endTime = System.nanoTime();
+            long frameTime = endTime - startTime;
+
+            long sleepTime = (long) (TARGET_TIME_PER_FRAME - frameTime);
+
+            if (sleepTime > 0) {
+                try {
+                    Thread.sleep(sleepTime / 1000000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
+
     public void update() {
         player.update();
     }
